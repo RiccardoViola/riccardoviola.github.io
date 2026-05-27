@@ -1,1 +1,103 @@
-<p>home works!</p>
+<canvas id="constellation-canvas" aria-hidden="true"></canvas>
+
+<!-- Sticky navbar -->
+<nav class="sticky top-6 z-50 flex gap-3 justify-center">
+  <button
+    (click)="scrollToCompanies()"
+    class="nav-btn px-6 py-2.5 rounded-full text-sm font-semibold tracking-widest uppercase transition-all duration-300"
+  >
+    Companies
+  </button>
+  <button
+    (click)="goToSkills()"
+    class="nav-btn nav-btn--active px-6 py-2.5 rounded-full text-sm font-semibold tracking-widest uppercase transition-all duration-300"
+  >
+    Skills
+  </button>
+</nav>
+
+<!-- Hero section -->
+<section class="relative min-h-screen flex items-center px-6 md:px-16 lg:px-28">
+  <div class="w-full flex flex-col md:flex-row items-center gap-12 md:gap-16 pt-24 md:pt-0">
+    <!-- Avatar -->
+    <div class="avatar-wrapper flex-shrink-0">
+      <div class="avatar-ring">
+        <img src="" class="avatar-img w-44 h-44 md:w-56 md:h-56 rounded-full object-cover" />
+      </div>
+      <div class="avatar-glow"></div>
+    </div>
+
+    <!-- Description -->
+    <div class="hero-text flex-1 text-left">
+      <p class="hero-tag text-xs tracking-[0.3em] uppercase mb-3">Software Developer</p>
+      <h1 class="hero-name text-4xl md:text-5xl lg:text-6xl font-bold mb-5 leading-tight">
+        Riccardo <span class="name-accent">Viola</span>
+      </h1>
+      <p class="hero-desc text-base md:text-lg leading-relaxed max-w-lg">
+        I build resilient backend systems with Spring Boot and craft fluid, reactive frontends with Angular. Passionate about clean architecture, DDD, and developer experience.
+      </p>
+      <div class="mt-8 flex gap-4">
+        <a
+          href="https://riccardoviola.github.io/"
+          class="cta-link text-sm tracking-widest uppercase"
+          >GitHub ↗</a
+        >
+        <a
+          href="https://it.linkedin.com/in/riccardo-viola-263339a4"
+          class="cta-link text-sm tracking-widest uppercase"
+          >LinkedIn ↗</a
+        >
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll hint
+  <div class="scroll-hint absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+    <span class="text-xs tracking-widest uppercase opacity-40">scroll</span>
+    <div class="scroll-line"></div>
+  </div> -->
+</section>
+
+<!-- Companies section -->
+<section id="companies-section" class="relative pb-28 pt-8">
+  <h2 class="section-title text-xs tracking-[0.4em] uppercase mb-12 px-6 md:px-16 lg:px-28">
+    Work Experience
+  </h2>
+
+  <!-- Timeline + Cards layout -->
+  <div class="timeline-layout px-6 md:px-16 lg:px-28">
+    @for (project of companies; track project.name; let i = $index) {
+      <div class="timeline-row" [style.animation-delay]="i * 100 + 'ms'">
+        <!-- Left: dates + dot -->
+        <div class="timeline-meta">
+          <span class="timeline-date">{{ project.startDate }}</span>
+          <div class="timeline-dot"></div>
+          <span class="timeline-date timeline-date--end">{{ project.endDate }}</span>
+          <!-- vertical connector between rows -->
+          @if (i < companies.length - 1) {
+            <div class="timeline-connector"></div>
+          }
+        </div>
+
+        <!-- Right: full-width card -->
+        <div
+          class="project-card"
+          (click)="goToProject(project.name)"
+          (keydown.enter)="goToProject(project.name)"
+          tabindex="0"
+          role="button"
+          [attr.aria-label]="'Open project ' + project.name"
+        >
+          <div class="card-inner">
+            <div class="card-header">
+              <h3 class="card-title">{{ project.name }}</h3>
+              <div class="card-arrow">→</div>
+            </div>
+            <p class="card-desc">{{ project.description }}</p>
+          </div>
+          <div class="card-shine"></div>
+        </div>
+      </div>
+    }
+  </div>
+</section>
