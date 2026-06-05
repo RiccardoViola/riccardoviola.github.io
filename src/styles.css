@@ -1,1 +1,22 @@
 @import 'tailwindcss';
+
+/* Riduce lo spazio verticale attorno ai contenitori q-full e lo rende responsive */
+.q-full {
+  margin-block: 0.25rem;
+  padding-block: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .q-full {
+    margin-block: 0.35rem;
+    padding-block: 0.6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .q-full {
+    margin-block: 0.5rem;
+    padding-block: 0.75rem;
+  }
+}
+

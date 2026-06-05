@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private animFrameId = 0;
 
   companies: Company[] = [];
+  showCompaniesSection = false;
 
   async ngOnInit(): Promise<void> {
     const companiesUrl = new URL('app/assets/data/companies.json', document.baseURI).href;
@@ -114,8 +115,15 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   scrollToCompanies(): void {
-    const el = document.getElementById('companies-section');
-    el?.scrollIntoView({ behavior: 'smooth' });
+    this.showCompaniesSection = true;
+    setTimeout(() => {
+      const el = document.getElementById('companies-section');
+      el?.scrollIntoView({ behavior: 'smooth' });
+    }, 0);
+  }
+
+  isString(value: unknown): value is string {
+    return typeof value === 'string';
   }
 
   goToSkills(): void {
