@@ -263,10 +263,11 @@ nav {
 
 .timeline-meta--center {
   align-items: center;
+  padding-right: 0;
 }
 
 .timeline-date {
-  font-size: 0.78rem;
+  font-size: 0.9rem;
   letter-spacing: 0.08em;
   color: #52b788;
   text-align: right;
