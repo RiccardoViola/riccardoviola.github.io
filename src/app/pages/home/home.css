@@ -364,6 +364,21 @@ nav {
   gap: 12px;
 }
 
+.card-title-group {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 12px;
+}
+
+.card-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
 .card-tag {
   font-size: 0.65rem;
   letter-spacing: 0.22em;

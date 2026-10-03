@@ -91,7 +91,16 @@
         >
           <div class="card-inner">
             <div class="card-header">
-              <h3 class="card-title">{{ project.name }}</h3>
+              <div class="card-title-group">
+                <img
+                  class="card-icon"
+                  [ngSrc]="'app/assets/images/' + project.icon"
+                  [alt]="project.name + ' logo'"
+                  width="40"
+                  height="40"
+                />
+                <h3 class="card-title">{{ project.name }}</h3>
+              </div>
               <div class="card-arrow">→</div>
             </div>
             <p class="card-desc">{{ project.description }}</p>

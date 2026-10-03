@@ -1,4 +1,5 @@
 import { Component, inject, OnInit, AfterViewInit, OnDestroy, NgZone } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
 import { Router } from '@angular/router';
 import { Company } from '../../model/models';
 
@@ -13,7 +14,7 @@ interface Star {
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [NgOptimizedImage],
   templateUrl: './home.html',
   styleUrls: ['./home.css'],
 })

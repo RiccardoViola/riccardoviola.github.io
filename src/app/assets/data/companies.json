@@ -1,7 +1,7 @@
 [
   {
     "name": "Capgemini",
-    "icon": "",
+    "icon": "capgemini.jpg",
     "startDate": "2019-12-01",
     "endDate": "Now",
     "description": "Descrizione del ruolo e delle responsabilità presso Capgemini. Ad esempio: sviluppo di soluzioni software per clienti in vari settori, partecipazione a progetti di trasformazione digitale, utilizzo di tecnologie come Java, Spring Boot, Angular, ecc."
