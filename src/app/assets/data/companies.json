@@ -14,7 +14,7 @@
         "grade": "Analyst Consultant",
         "role": "Full-stack Developer",
         "description": "Descrizione progetto",
-        "Technologies": []
+        "technologies": []
       },
       {
         "id": "002",
@@ -24,7 +24,7 @@
         "grade": "Analyst Consultant",
         "role": "Full-stack Developer",
         "description": "Descrizione progetto",
-        "Technologies": []
+        "technologies": []
       },
       {
         "id": "003",
@@ -34,7 +34,7 @@
         "grade": "Consultant",
         "role": "Full-stack Developer",
         "description": "Descrizione progetto",
-        "Technologies": []
+        "technologies": []
       },
       {
         "id": "004",
@@ -44,7 +44,7 @@
         "grade": "Consultant",
         "role": "Front-end Developer",
         "description": "Descrizione progetto",
-        "Technologies": []
+        "technologies": []
       },
       {
         "id": "005",
@@ -54,7 +54,7 @@
         "grade": "Consultant",
         "role": "Back-end Developer",
         "description": "Descrizione progetto",
-        "Technologies": []
+        "technologies": []
       },
       {
         "id": "006",
@@ -64,7 +64,7 @@
         "grade": "Consultant",
         "role": "Back-end Developer",
         "description": "Descrizione progetto",
-        "Technologies": []
+        "technologies": []
       },
       {
         "id": "007",
@@ -74,7 +74,7 @@
         "grade": "Consultant",
         "role": "Back-end Developer",
         "description": "Descrizione progetto",
-        "Technologies": []
+        "technologies": []
       },
       {
         "id": "008",
@@ -84,7 +84,7 @@
         "grade": "Consultant",
         "role": "Back-end Developer",
         "description": "Descrizione progetto",
-        "Technologies": []
+        "technologies": []
       }
     ]
   }

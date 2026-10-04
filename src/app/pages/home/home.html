@@ -1,4 +1,4 @@
-<canvas id="constellation-canvas" aria-hidden="true"></canvas>
+<app-constellation-background />
 
 <!-- Sticky navbar -->
 <nav class="sticky top-6 z-50 flex gap-3 justify-center">
@@ -83,8 +83,8 @@
         <!-- Right: full-width card -->
         <div
           class="project-card"
-          (click)="goToProject(project.name)"
-          (keydown.enter)="goToProject(project.name)"
+          (click)="goToCompany(project.name)"
+          (keydown.enter)="goToCompany(project.name)"
           tabindex="0"
           role="button"
           [attr.aria-label]="'Open project ' + project.name"

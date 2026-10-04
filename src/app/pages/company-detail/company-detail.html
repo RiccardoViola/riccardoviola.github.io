@@ -1,1 +1,85 @@
-<p>project-detail-component works!</p>
+<app-constellation-background />
+
+<main class="company-page">
+  <a class="back-link" routerLink="/" aria-label="Back to work experience">
+    <span aria-hidden="true">←</span>
+    Work experience
+  </a>
+
+  @if (loading()) {
+    <p class="page-message" role="status">Loading company details…</p>
+  } @else if (error()) {
+    <p class="page-message page-message--error" role="alert">{{ error() }}</p>
+  } @else if (company(); as selectedCompany) {
+    <header class="company-header">
+      <img
+        class="company-icon"
+        [ngSrc]="'app/assets/images/' + selectedCompany.icon"
+        [alt]="selectedCompany.name + ' logo'"
+        width="56"
+        height="56"
+      />
+      <h1>{{ selectedCompany.name }}</h1>
+    </header>
+
+    <section class="client-list" [attr.aria-label]="selectedCompany.name + ' client experience'">
+      @for (client of clients(); track client.id) {
+        <article class="client-card">
+          <section class="client-field">
+            <h2>Sector</h2>
+            <p>{{ client.sector }}</p>
+          </section>
+
+          <section class="client-field">
+            <h2>Working period</h2>
+            <p>{{ client.startDate }} – {{ client.endDate }}</p>
+          </section>
+
+          <section class="client-field">
+            <h2>Grade</h2>
+            <p>{{ client.grade }}</p>
+          </section>
+
+          <section class="client-field">
+            <h2>Role</h2>
+            <p>{{ client.role }}</p>
+          </section>
+
+          <section class="client-field">
+            <h2>Description</h2>
+            <p>{{ client.description }}</p>
+          </section>
+
+          <section class="client-field">
+            <h2>Technologies</h2>
+            @if (technologiesFor(client); as clientTechnologies) {
+              @if (clientTechnologies.length > 0) {
+                <ul class="technology-list" aria-label="Technologies used">
+                  @for (technology of clientTechnologies; track technology.id) {
+                    <li class="technology-item">
+                      @if (technology.icon) {
+                        <img
+                          class="technology-icon"
+                          [ngSrc]="'app/assets/images/' + technology.icon"
+                          [alt]="technology.name"
+                          width="36"
+                          height="36"
+                        />
+                      } @else {
+                        <span class="technology-name">{{ technology.name }}</span>
+                      }
+                    </li>
+                  }
+                </ul>
+              } @else {
+                <p class="empty-technologies">No technologies specified.</p>
+              }
+            }
+          </section>
+        </article>
+      } @empty {
+        <p class="page-message">No client experience is available for this company.</p>
+      }
+    </section>
+  }
+</main>

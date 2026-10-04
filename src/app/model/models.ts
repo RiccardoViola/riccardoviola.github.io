@@ -1,23 +1,27 @@
 export interface Company {
   name: string;
   icon: string;
-  startDate: Date;
-  endDate: Date;
+  startDate: string;
+  endDate: string;
   description: string;
+  clients: Client[];
 }
 
-export interface Project {
-  projectType: string;
-  startDate: Date;
-  endDate: Date;
+export interface Client {
+  id: string;
+  sector: string;
+  startDate: string;
+  endDate: string;
   grade: string;
   role: string;
   description: string;
-  technologies: Technology[];
+  technologies: number[];
 }
 
 export interface Technology {
+  id: number;
   order: number;
   name: string;
   icon: string;
+  type: string;
 }
