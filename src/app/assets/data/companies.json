@@ -1,9 +1,91 @@
 [
   {
-    "name": "Capgemini",
-    "icon": "capgemini.jpg",
+    "name": "CAPGEMINI",
+    "icon": "companies/capgemini.jpg",
     "startDate": "2019-12-01",
     "endDate": "Now",
-    "description": "Descrizione del ruolo e delle responsabilità presso Capgemini. Ad esempio: sviluppo di soluzioni software per clienti in vari settori, partecipazione a progetti di trasformazione digitale, utilizzo di tecnologie come Java, Spring Boot, Angular, ecc."
+    "description": "Descrizione del ruolo e delle responsabilità presso Capgemini. Ad esempio: sviluppo di soluzioni software per clienti in vari settori, partecipazione a progetti di trasformazione digitale, utilizzo di tecnologie come Java, Spring Boot, Angular, ecc.",
+    "clients": [
+      {
+        "id": "001",
+        "sector": "Telecommunications",
+        "startDate": "2019-12-01",
+        "endDate": "2020-03-31",
+        "grade": "Analyst Consultant",
+        "role": "Full-stack Developer",
+        "description": "Descrizione progetto",
+        "Technologies": []
+      },
+      {
+        "id": "002",
+        "sector": "Telecommunications",
+        "startDate": "2020-04-01",
+        "endDate": "2021-07-31",
+        "grade": "Analyst Consultant",
+        "role": "Full-stack Developer",
+        "description": "Descrizione progetto",
+        "Technologies": []
+      },
+      {
+        "id": "003",
+        "sector": "Telecommunications",
+        "startDate": "2021-08-01",
+        "endDate": "2022-10-31",
+        "grade": "Consultant",
+        "role": "Full-stack Developer",
+        "description": "Descrizione progetto",
+        "Technologies": []
+      },
+      {
+        "id": "004",
+        "sector": "Energy",
+        "startDate": "2022-11-01",
+        "endDate": "2023-12-31",
+        "grade": "Consultant",
+        "role": "Front-end Developer",
+        "description": "Descrizione progetto",
+        "Technologies": []
+      },
+      {
+        "id": "005",
+        "sector": "Energy",
+        "startDate": "2024-01-01",
+        "endDate": "2024-06-30",
+        "grade": "Consultant",
+        "role": "Back-end Developer",
+        "description": "Descrizione progetto",
+        "Technologies": []
+      },
+      {
+        "id": "006",
+        "sector": "Telecommunications",
+        "startDate": "2024-07-01",
+        "endDate": "2026-01-15",
+        "grade": "Consultant",
+        "role": "Back-end Developer",
+        "description": "Descrizione progetto",
+        "Technologies": []
+      },
+      {
+        "id": "007",
+        "sector": "Telecommunications",
+        "startDate": "2026-01-16",
+        "endDate": "2026-04-30",
+        "grade": "Consultant",
+        "role": "Back-end Developer",
+        "description": "Descrizione progetto",
+        "Technologies": []
+      },
+      {
+        "id": "008",
+        "sector": "Insurance",
+        "startDate": "2026-05-01",
+        "endDate": "Now",
+        "grade": "Consultant",
+        "role": "Back-end Developer",
+        "description": "Descrizione progetto",
+        "Technologies": []
+      }
+    ]
   }
 ]
