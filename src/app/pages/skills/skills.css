@@ -96,19 +96,21 @@
 }
 
 .category-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: start;
-  gap: 18px;
+  columns: 2;
+  column-gap: 18px;
 }
 
 .category-card {
+  display: inline-block;
   min-width: 0;
+  width: 100%;
+  margin-bottom: 18px;
   padding: 22px;
   border: 1px solid rgba(193, 213, 200, 0.13);
   border-radius: 16px;
   background: rgba(17, 31, 24, 0.88);
   box-shadow: 0 10px 32px rgba(0, 0, 0, 0.12);
+  break-inside: avoid;
 }
 
 .category-header {
@@ -220,7 +222,7 @@
   }
 
   .category-grid {
-    grid-template-columns: 1fr;
+    columns: 1;
   }
 }
 
