@@ -147,36 +147,72 @@
 }
 
 .technology-item {
+  position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-width: 48px;
-  min-height: 48px;
-  padding: 0.35rem;
+  flex: 0 0 76px;
+  width: 76px;
+  height: 76px;
+  padding: 0.2rem;
+  overflow: hidden;
   border: 1px solid rgba(64, 145, 108, 0.25);
   border-radius: 12px;
-  background: rgba(64, 145, 108, 0.12);
-  transition:
-    border-color 0.2s ease,
-    background 0.2s ease,
-    transform 0.2s ease;
-}
-
-.technology-item:hover {
-  transform: translateY(-2px);
-  border-color: rgba(64, 145, 108, 0.55);
-  background: rgba(64, 145, 108, 0.2);
+  background: #f8faf9;
 }
 
 .technology-icon {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
   object-fit: contain;
 }
 
 .technology-name {
-  color: #b7e4c7;
-  font-size: 0.85rem;
+  color: #245b3f;
+  display: -webkit-box;
+  max-height: 2.2em;
+  overflow: hidden;
+  font-size: 0.58rem;
+  line-height: 1.1;
+  overflow-wrap: break-word;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+@media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
+  .technology-item {
+    border-color: transparent;
+    border-radius: 50%;
+    background: #f8faf9;
+  }
+
+  .technology-icon {
+    width: 68px;
+    height: 68px;
+    flex-basis: 68px;
+  }
+
+  .technology-name {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    max-height: none;
+    place-content: center;
+    padding: 0.4rem;
+    border-radius: 50%;
+    background: rgba(5, 13, 9, 0.92);
+    color: #d6e8d8;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease;
+  }
+
+  .technology-item:hover .technology-name {
+    opacity: 1;
+  }
 }
 
 .empty-technologies {
@@ -231,8 +267,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .back-link,
-  .client-card,
-  .technology-item {
+  .client-card {
     transition: none;
   }
 }

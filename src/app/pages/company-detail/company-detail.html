@@ -68,18 +68,18 @@
               @if (clientTechnologies.length > 0) {
                 <ul class="technology-list" aria-label="Technologies used">
                   @for (technology of clientTechnologies; track technology.id) {
-                    <li class="technology-item">
+                    <li class="technology-item" [attr.aria-label]="technology.name">
                       @if (technology.icon) {
                         <img
                           class="technology-icon"
                           [ngSrc]="'app/assets/images/' + technology.icon"
-                          [alt]="technology.name"
+                          alt=""
+                          aria-hidden="true"
                           width="36"
                           height="36"
                         />
-                      } @else {
-                        <span class="technology-name">{{ technology.name }}</span>
                       }
+                      <span class="technology-name">{{ technology.name }}</span>
                     </li>
                   }
                 </ul>
