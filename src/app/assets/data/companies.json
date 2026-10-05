@@ -7,7 +7,7 @@
     "description": "Descrizione del ruolo e delle responsabilità presso Capgemini. Ad esempio: sviluppo di soluzioni software per clienti in vari settori, partecipazione a progetti di trasformazione digitale, utilizzo di tecnologie come Java, Spring Boot, Angular, ecc.",
     "clients": [
       {
-        "id": "001",
+        "id": 1,
         "sector": 1,
         "startDate": "2019-12-01",
         "endDate": "2020-03-31",
@@ -17,7 +17,7 @@
         "technologies": [1, 7, 8, 9, 15, 16, 23, 28, 29, 38]
       },
       {
-        "id": "002",
+        "id": 2,
         "sector": 1,
         "startDate": "2020-04-01",
         "endDate": "2021-07-31",
@@ -27,7 +27,7 @@
         "technologies": [1, 5, 7, 9, 10, 15, 17, 23, 28, 30, 37]
       },
       {
-        "id": "003",
+        "id": 3,
         "sector": 1,
         "startDate": "2021-08-01",
         "endDate": "2022-10-31",
@@ -37,7 +37,7 @@
         "technologies": [1, 7, 10, 15, 16, 19, 23, 28, 32, 38]
       },
       {
-        "id": "004",
+        "id": 4,
         "sector": 2,
         "startDate": "2022-11-01",
         "endDate": "2023-12-31",
@@ -47,7 +47,7 @@
         "technologies": [31, 33, 34, 37, 39, 40]
       },
       {
-        "id": "005",
+        "id": 5,
         "sector": 2,
         "startDate": "2024-01-01",
         "endDate": "2024-06-30",
@@ -57,7 +57,7 @@
         "technologies": [4, 7, 11, 15, 18, 20, 22, 23, 25, 37, 39, 40, 42]
       },
       {
-        "id": "006",
+        "id": 6,
         "sector": 1,
         "startDate": "2024-07-01",
         "endDate": "2026-01-15",
@@ -67,7 +67,7 @@
         "technologies": [4, 7, 26, 28, 37, 39, 40, 41, 43, 44, 46, 47, 48, 49, 51, 52]
       },
       {
-        "id": "007",
+        "id": 7,
         "sector": 1,
         "startDate": "2026-01-16",
         "endDate": "2026-04-30",
@@ -77,7 +77,7 @@
         "technologies": [4, 7, 11, 15, 18, 20, 21, 22, 24, 28, 35, 36, 37, 39, 40, 41, 44, 47, 50, 51, 53]
       },
       {
-        "id": "008",
+        "id": 8,
         "sector": 3,
         "startDate": "2026-05-01",
         "endDate": "Now",
