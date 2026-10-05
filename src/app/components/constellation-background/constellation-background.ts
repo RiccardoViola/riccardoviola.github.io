@@ -72,7 +72,7 @@ export class ConstellationBackgroundComponent implements AfterViewInit, OnDestro
     resize();
     window.addEventListener('resize', resize);
 
-    const count = 55;
+    const count = 150;
     const maxDistance = 120;
     const stars: Star[] = Array.from({ length: count }, () => ({
       x: Math.random() * canvas.width,
