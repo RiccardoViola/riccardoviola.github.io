@@ -1,0 +1,248 @@
+.skills-page {
+  min-height: 100vh;
+  padding: 48px 24px 80px;
+  color: #f1f5f2;
+  background: linear-gradient(145deg, rgba(7, 20, 15, 0.96), rgba(9, 17, 15, 0.94));
+}
+
+.skills-content {
+  width: min(100%, 1120px);
+  margin: 0 auto;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #c5d2ca;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.back-link:hover,
+.back-link:focus-visible {
+  color: #74c69d;
+}
+
+.back-link span {
+  font-size: 1.2rem;
+}
+
+.skills-header {
+  max-width: 690px;
+  margin: 48px 0 32px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: #74c69d;
+  font-size: 0.77rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.skills-header h1 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(2.8rem, 7vw, 4.7rem);
+  font-weight: 700;
+  letter-spacing: -0.055em;
+  line-height: 1;
+}
+
+.intro {
+  margin: 20px 0 0;
+  color: #b8c5bd;
+  font-size: 1.1rem;
+  line-height: 1.65;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.summary-card {
+  display: flex;
+  min-height: 108px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 18px 22px;
+  border: 1px solid rgba(193, 213, 200, 0.13);
+  border-radius: 14px;
+  background: rgba(21, 36, 29, 0.82);
+}
+
+.summary-value {
+  color: #f5fff8;
+  font-size: 1.55rem;
+  font-weight: 700;
+}
+
+.summary-label {
+  color: #aab9b0;
+  font-size: 0.85rem;
+}
+
+.method-note {
+  max-width: 850px;
+  margin: 24px 0 32px;
+  color: #aab9b0;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 18px;
+}
+
+.category-card {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid rgba(193, 213, 200, 0.13);
+  border-radius: 16px;
+  background: rgba(17, 31, 24, 0.88);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.12);
+}
+
+.category-header {
+  display: flex;
+  min-height: 54px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(193, 213, 200, 0.12);
+}
+
+.category-header h2 {
+  margin: 0;
+  color: #f4f8f5;
+  font-size: 1.1rem;
+  font-weight: 650;
+}
+
+.category-header p {
+  margin: 6px 0 0;
+  color: #95a69b;
+  font-size: 0.8rem;
+}
+
+.technology-list {
+  display: grid;
+  gap: 4px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.technology-item {
+  display: flex;
+  min-height: 62px;
+  align-items: center;
+  gap: 13px;
+}
+
+.usage-chart {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  overflow: visible;
+  transform: rotate(-90deg);
+}
+
+.chart-track,
+.chart-value {
+  fill: none;
+  stroke-width: 5;
+}
+
+.chart-track {
+  stroke: rgba(193, 213, 200, 0.13);
+}
+
+.chart-value {
+  stroke: var(--category-color);
+  stroke-linecap: round;
+}
+
+.usage-chart text {
+  fill: #edf6ef;
+  font-size: 11px;
+  font-weight: 650;
+  text-anchor: middle;
+  dominant-baseline: central;
+  transform: rotate(90deg);
+  transform-origin: 22px 22px;
+}
+
+.technology-copy {
+  min-width: 0;
+}
+
+.technology-copy h3 {
+  overflow-wrap: anywhere;
+  margin: 0;
+  color: #e4ece6;
+  font-size: 0.93rem;
+  font-weight: 550;
+}
+
+.technology-copy p {
+  margin: 4px 0 0;
+  color: #93a59a;
+  font-size: 0.78rem;
+}
+
+.status-message {
+  margin: 40px 0;
+  color: #c7d3ca;
+  line-height: 1.6;
+}
+
+.error-message {
+  color: #ffaaa5;
+}
+
+@media (max-width: 760px) {
+  .skills-page {
+    padding: 32px 18px 56px;
+  }
+
+  .skills-header {
+    margin-top: 40px;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .summary-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .summary-card {
+    min-height: 92px;
+    padding: 15px 17px;
+  }
+
+  .summary-value {
+    font-size: 1.35rem;
+  }
+
+  .category-card {
+    padding: 19px 17px;
+  }
+}

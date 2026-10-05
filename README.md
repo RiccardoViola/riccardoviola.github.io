@@ -7,7 +7,7 @@ Personal portfolio built with Angular 21. It presents an overview of my work exp
 - Responsive home page with an introduction and work-experience timeline.
 - Company detail pages with client engagement information, sector icons, and technology icons.
 - Work periods displayed with approximate durations.
-- Dedicated Skills route, currently under development.
+- Skills dashboard with technology usage grouped by category and charted against total work experience, from the first project through today.
 
 ## Requirements
 
@@ -49,6 +49,7 @@ Portfolio content is stored in JSON files under `src/app/assets/data/`:
 - `companies.json` contains company and client-engagement information; each client references its sector by ID from `sectors.json`.
 - `technologies.json` contains the technology catalogue and icon paths.
 - `sectors.json` contains the sector catalogue and icon paths.
+- Skills estimates use the dates of client engagements that list each technology; overlapping engagements for the same technology are counted once, and different technologies may overlap.
 
 Images are stored in `src/app/assets/images/`, grouped into `companies/`, `sectors/`, and `technologies/`.
 

@@ -1,1 +1,95 @@
-<p>skills-component works!</p>
+<main class="skills-page">
+  <div class="skills-content">
+    <a class="back-link" routerLink="/" aria-label="Back to portfolio">
+      <span aria-hidden="true">&larr;</span>
+      Portfolio
+    </a>
+
+    <header class="skills-header">
+      <p class="eyebrow">TECHNOLOGY OVER TIME</p>
+      <h1>Skills</h1>
+      <p class="intro">
+        An overview of the technologies recorded across my client engagements, grouped by area.
+      </p>
+    </header>
+
+    @if (loading()) {
+      <p class="status-message" role="status">Loading skills data...</p>
+    } @else if (error()) {
+      <p class="status-message error-message" role="alert">{{ error() }}</p>
+    } @else if (categories().length === 0) {
+      <p class="status-message">No technology usage has been recorded yet.</p>
+    } @else {
+      <section class="summary" aria-label="Skills overview">
+        <article class="summary-card">
+          <span class="summary-value">{{ technologyCount() }}</span>
+          <span class="summary-label">Technologies</span>
+        </article>
+        <article class="summary-card">
+          <span class="summary-value">{{ categories().length }}</span>
+          <span class="summary-label">Areas</span>
+        </article>
+        <article class="summary-card">
+          <span class="summary-value">{{ formatDuration(workExperienceMonths()) }}</span>
+          <span class="summary-label">Total work experience</span>
+        </article>
+      </section>
+
+      <p class="method-note">
+        Each chart shows the share of total work experience covered by projects recording that
+        technology. Overlapping projects for the same technology are counted once; different
+        technologies can overlap in time, so their percentages are not exclusive.
+      </p>
+
+      <div class="category-grid">
+        @for (category of categories(); track category.name) {
+          <section
+            class="category-card"
+            [style.--category-color]="category.color"
+            [attr.aria-labelledby]="'category-' + $index"
+          >
+            <header class="category-header">
+              <div>
+                <h2 [id]="'category-' + $index">{{ category.name }}</h2>
+                <p>{{ category.technologies.length }} technologies</p>
+              </div>
+            </header>
+
+            <ul class="technology-list">
+              @for (technology of category.technologies; track technology.id) {
+                <li class="technology-item">
+                  <svg
+                    class="usage-chart"
+                    viewBox="0 0 44 44"
+                    role="img"
+                    [attr.aria-label]="
+                      technology.share + '% of total work experience for ' + technology.name
+                    "
+                  >
+                    <circle class="chart-track" cx="22" cy="22" r="17" pathLength="100" />
+                    <circle
+                      class="chart-value"
+                      cx="22"
+                      cy="22"
+                      r="17"
+                      pathLength="100"
+                      [attr.stroke-dasharray]="technology.share + ' 100'"
+                    />
+                    <text x="22" y="22">{{ technology.share }}%</text>
+                  </svg>
+                  <div class="technology-copy">
+                    <h3>{{ technology.name }}</h3>
+                    <p>
+                      {{ formatDuration(technology.trackedMonths) }} · {{ technology.share }}% of
+                      total
+                    </p>
+                  </div>
+                </li>
+              }
+            </ul>
+          </section>
+        }
+      </div>
+    }
+  </div>
+</main>
