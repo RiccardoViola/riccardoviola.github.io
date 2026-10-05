@@ -42,6 +42,14 @@ On Windows PowerShell, if script execution is restricted, run the commands throu
 | `npm run format`       | Format source files with Prettier.                             |
 | `npm run format:check` | Check source formatting with Prettier.                         |
 
+## Deployment
+
+The `Deploy to GitHub Pages` workflow builds the Angular application and publishes
+`dist/riccardoviola.github.io/browser` whenever changes are pushed to `master`.
+In the repository's **Settings → Pages**, set the build and deployment source to
+**GitHub Actions**. The workflow also publishes an SPA fallback so direct links to
+portfolio pages continue to load.
+
 ## Project data
 
 Portfolio content is stored in JSON files under `src/app/assets/data/`:
