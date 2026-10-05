@@ -17,7 +17,10 @@
 .back-link {
   display: inline-flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 0.6rem;
+  width: 12rem;
+  height: 3.25rem;
   margin-bottom: 2rem;
   padding: 0.6rem 1rem;
   border: 1px solid rgba(64, 145, 108, 0.3);
@@ -32,6 +35,25 @@
     border-color 0.2s ease,
     color 0.2s ease,
     transform 0.2s ease;
+}
+
+.back-link > span[aria-hidden='true'] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 1.75rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  transform: translateY(-2px);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.back-link .back-link-label {
+  width: auto;
+  height: auto;
+  line-height: 1.2;
 }
 
 .back-link:hover,
@@ -74,8 +96,7 @@
   border: 1px solid rgba(64, 145, 108, 0.24);
   border-radius: 16px;
   background:
-    linear-gradient(135deg, rgba(116, 198, 157, 0.055), transparent 46%),
-    rgba(10, 26, 15, 0.66);
+    linear-gradient(135deg, rgba(116, 198, 157, 0.055), transparent 46%), rgba(10, 26, 15, 0.66);
   box-shadow:
     0 8px 32px rgba(0, 0, 0, 0.24),
     inset 0 1px 0 rgba(116, 198, 157, 0.07);

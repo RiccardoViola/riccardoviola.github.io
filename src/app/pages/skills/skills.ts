@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { ConstellationBackgroundComponent } from '../../components/constellation-background/constellation-background';
 import { Company, Technology } from '../../model/models';
 import {
   approximateDurationMonthsFromDays,
@@ -27,7 +28,7 @@ interface SkillCategory {
 
 @Component({
   selector: 'app-skills',
-  imports: [RouterLink],
+  imports: [RouterLink, ConstellationBackgroundComponent],
   templateUrl: './skills.html',
   styleUrls: ['./skills.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,

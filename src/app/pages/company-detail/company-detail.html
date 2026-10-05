@@ -1,9 +1,14 @@
 <app-constellation-background />
 
 <main class="company-page">
-  <a class="back-link" routerLink="/" aria-label="Back to work experience">
+  <a
+    class="back-link"
+    routerLink="/"
+    fragment="companies-section"
+    aria-label="Back to work experience"
+  >
     <span aria-hidden="true">←</span>
-    Work experience
+    <span class="back-link-label">Work experience</span>
   </a>
 
   @if (loading()) {
