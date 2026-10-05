@@ -129,6 +129,10 @@
   overflow-wrap: anywhere;
 }
 
+.client-description {
+  grid-column: 1 / -1;
+}
+
 .sector-icon {
   width: 110px;
   height: 110px;

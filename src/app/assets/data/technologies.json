@@ -383,5 +383,19 @@
     "name": "Fork",
     "icon": "technologies/fork.png",
     "type": "Versioning & SourceControl"
+  },
+  {
+    "id": 56,
+    "order": 56,
+    "name": "Figma",
+    "icon": "technologies/figma.png",
+    "type": "Design & Prototyping"
+  },
+  {
+    "id": 57,
+    "order": 57,
+    "name": "Diagrams-net",
+    "icon": "technologies/diagrams-net.png",
+    "type": "Design & Prototyping"
   }
 ]
