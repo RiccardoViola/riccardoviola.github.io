@@ -1,59 +1,57 @@
-# RiccardoviolaGithubIo
+# Riccardo Viola — Portfolio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.11.
+Personal portfolio built with Angular 21. It presents an overview of my work experience and provides a detail page for each company, including client engagements, sectors, roles, work periods, and technologies.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- Responsive home page with an introduction and work-experience timeline.
+- Company detail pages with client engagement information, sector icons, and technology icons.
+- Work periods displayed with approximate durations.
+- Dedicated Skills route, currently under development.
 
-```bash
-ng serve
-```
+## Requirements
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- Node.js and npm.
 
-## Code scaffolding
+## Getting started
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Install dependencies:
 
 ```bash
-ng generate --help
+npm install
 ```
 
-## Building
-
-To build the project run:
+Start the development server:
 
 ```bash
-ng build
+npm start
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Open `http://localhost:4200/`. The server reloads when source files change.
 
-## Running unit tests
+On Windows PowerShell, if script execution is restricted, run the commands through `npm.cmd` (for example, `npm.cmd install` and `npm.cmd start`) instead of invoking `ng.ps1` directly.
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## Available commands
 
-```bash
-ng test
-```
+| Command                | Description                                                    |
+| ---------------------- | -------------------------------------------------------------- |
+| `npm start`            | Start the local development server.                            |
+| `npm run build`        | Create a production build in `dist/`.                          |
+| `npm test`             | Run unit tests with the configured test runner.                |
+| `npm run watch`        | Rebuild on source changes using the development configuration. |
+| `npm run format`       | Format source files with Prettier.                             |
+| `npm run format:check` | Check source formatting with Prettier.                         |
 
-## Running end-to-end tests
+## Project data
 
-For end-to-end (e2e) testing, run:
+Portfolio content is stored in JSON files under `src/app/assets/data/`:
 
-```bash
-ng e2e
-```
+- `companies.json` contains company and client-engagement information.
+- `technologies.json` contains the technology catalogue and icon paths.
+- `sectors.json` contains the sector catalogue and icon paths.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Images are stored in `src/app/assets/images/`, grouped into `companies/`, `sectors/`, and `technologies/`.
 
-## Additional Resources
+## Changelog
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+See [changelog.md](./changelog.md) for a summary of the committed project history.
