@@ -9,7 +9,7 @@ export interface Company {
 
 export interface Client {
   id: string;
-  sector: string;
+  sector: number;
   startDate: string;
   endDate: string;
   grade: string;

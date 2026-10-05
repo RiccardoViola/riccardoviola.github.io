@@ -46,7 +46,7 @@ On Windows PowerShell, if script execution is restricted, run the commands throu
 
 Portfolio content is stored in JSON files under `src/app/assets/data/`:
 
-- `companies.json` contains company and client-engagement information.
+- `companies.json` contains company and client-engagement information; each client references its sector by ID from `sectors.json`.
 - `technologies.json` contains the technology catalogue and icon paths.
 - `sectors.json` contains the sector catalogue and icon paths.
 

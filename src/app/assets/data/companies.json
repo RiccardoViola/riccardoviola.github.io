@@ -8,7 +8,7 @@
     "clients": [
       {
         "id": "001",
-        "sector": "Telecommunications",
+        "sector": 1,
         "startDate": "2019-12-01",
         "endDate": "2020-03-31",
         "grade": "Analyst Consultant",
@@ -18,7 +18,7 @@
       },
       {
         "id": "002",
-        "sector": "Telecommunications",
+        "sector": 1,
         "startDate": "2020-04-01",
         "endDate": "2021-07-31",
         "grade": "Analyst Consultant",
@@ -28,7 +28,7 @@
       },
       {
         "id": "003",
-        "sector": "Telecommunications",
+        "sector": 1,
         "startDate": "2021-08-01",
         "endDate": "2022-10-31",
         "grade": "Consultant",
@@ -38,7 +38,7 @@
       },
       {
         "id": "004",
-        "sector": "Energy",
+        "sector": 2,
         "startDate": "2022-11-01",
         "endDate": "2023-12-31",
         "grade": "Consultant",
@@ -48,7 +48,7 @@
       },
       {
         "id": "005",
-        "sector": "Energy",
+        "sector": 2,
         "startDate": "2024-01-01",
         "endDate": "2024-06-30",
         "grade": "Consultant",
@@ -58,7 +58,7 @@
       },
       {
         "id": "006",
-        "sector": "Telecommunications",
+        "sector": 1,
         "startDate": "2024-07-01",
         "endDate": "2026-01-15",
         "grade": "Consultant",
@@ -68,7 +68,7 @@
       },
       {
         "id": "007",
-        "sector": "Telecommunications",
+        "sector": 1,
         "startDate": "2026-01-16",
         "endDate": "2026-04-30",
         "grade": "Consultant",
@@ -78,7 +78,7 @@
       },
       {
         "id": "008",
-        "sector": "Insurance",
+        "sector": 3,
         "startDate": "2026-05-01",
         "endDate": "Now",
         "grade": "Consultant",

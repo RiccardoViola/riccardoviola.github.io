@@ -85,8 +85,8 @@ export class CompanyDetailComponent implements OnInit {
       .sort((first, second) => first.order - second.order);
   }
 
-  sectorIcon(sectorName: string): string | undefined {
-    return this.sectors().find((sector) => sector.name === sectorName)?.icon;
+  sectorFor(sectorId: number): Sector | undefined {
+    return this.sectors().find((sector) => sector.id === sectorId);
   }
 
   formatDate(value: string): string {

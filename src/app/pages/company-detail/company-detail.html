@@ -19,10 +19,10 @@
       @for (client of clients(); track client.id) {
         <article class="client-card">
           <div class="client-summary">
-            @if (sectorIcon(client.sector); as icon) {
+            @if (sectorFor(client.sector); as sector) {
               <img
                 class="sector-icon"
-                [ngSrc]="'app/assets/images/' + icon"
+                [ngSrc]="'app/assets/images/' + sector.icon"
                 alt=""
                 aria-hidden="true"
                 width="800"
@@ -32,7 +32,7 @@
             <div class="client-summary-fields">
               <section class="client-field">
                 <h2>Sector</h2>
-                <p>{{ client.sector }}</p>
+                <p>{{ sectorFor(client.sector)?.name ?? client.sector }}</p>
               </section>
 
               <section class="client-field">
