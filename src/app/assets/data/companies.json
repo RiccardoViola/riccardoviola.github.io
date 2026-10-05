@@ -34,7 +34,7 @@
         "grade": "Consultant",
         "role": "Full-stack Developer",
         "description": "After my earlier assignment, the client explicitly requested that I return to the team. The systems had since evolved, but I was able to rejoin quickly by applying my familiarity with the team's delivery practices. I worked on the client's internal applications as a Full-stack Developer, using Angular 13, Java 11, Spring Boot, Spring Data JDBC, and Oracle SQL; the back-end services exposed REST APIs through a microservices architecture. My contribution also expanded beyond implementation: from early in the engagement I increasingly analysed requirements, decomposed work into tasks, and prepared estimates, taking greater responsibility for shaping work before development began.",
-        "technologies": [1, 7, 10, 15, 16, 19, 23, 28, 32, 38]
+        "technologies": [1, 7, 10, 1, 14, 15, 16, 19, 23, 28, 32, 38]
       },
       {
         "id": 4,
