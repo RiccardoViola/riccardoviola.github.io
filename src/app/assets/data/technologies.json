@@ -1,401 +1,401 @@
 [
   {
     "id": 1,
-    "order": 1,
+    "order": 9,
     "name": "Oracle SQL",
     "icon": "technologies/oracle-sql.png",
-    "type": "Database"
+    "typeId": 3
   },
   {
     "id": 2,
-    "order": 2,
+    "order": 10,
     "name": "DBeaver",
     "icon": "technologies/dbeaver.png",
-    "type": "Database"
+    "typeId": 3
   },
   {
     "id": 3,
-    "order": 3,
+    "order": 11,
     "name": "H2",
     "icon": "technologies/h2.png",
-    "type": "Database"
+    "typeId": 3
   },
   {
     "id": 4,
-    "order": 4,
+    "order": 12,
     "name": "MongoDB",
     "icon": "technologies/mongodb.png",
-    "type": "Database"
+    "typeId": 3
   },
   {
     "id": 5,
-    "order": 5,
+    "order": 53,
     "name": "Putty",
     "icon": "technologies/putty.png",
-    "type": "Remote Access"
+    "typeId": 14
   },
   {
     "id": 6,
-    "order": 6,
+    "order": 54,
     "name": "WinSCP",
     "icon": "technologies/winscp.png",
-    "type": "Remote Access"
+    "typeId": 14
   },
   {
     "id": 7,
-    "order": 7,
+    "order": 36,
     "name": "Postman",
     "icon": "technologies/postman.png",
-    "type": "Testing"
+    "typeId": 9
   },
   {
     "id": 8,
-    "order": 8,
+    "order": 13,
     "name": "Java 6",
     "icon": "technologies/java.png",
-    "type": "Program Language"
+    "typeId": 4
   },
   {
     "id": 9,
-    "order": 9,
+    "order": 14,
     "name": "Java 8",
     "icon": "technologies/java.png",
-    "type": "Program Language"
+    "typeId": 4
   },
   {
     "id": 10,
-    "order": 10,
+    "order": 15,
     "name": "Java 11",
     "icon": "technologies/java.png",
-    "type": "Program Language"
+    "typeId": 4
   },
   {
     "id": 11,
-    "order": 11,
+    "order": 16,
     "name": "Java 17",
     "icon": "technologies/java.png",
-    "type": "Program Language"
+    "typeId": 4
   },
   {
     "id": 12,
-    "order": 12,
+    "order": 17,
     "name": "Java 21",
     "icon": "technologies/java.png",
-    "type": "Program Language"
+    "typeId": 4
   },
   {
     "id": 13,
-    "order": 13,
+    "order": 18,
     "name": "Java 25",
     "icon": "technologies/java.png",
-    "type": "Program Language"
+    "typeId": 4
   },
   {
     "id": 14,
-    "order": 14,
+    "order": 29,
     "name": "Primefaces",
     "icon": "technologies/primefaces.png",
-    "type": "FE Framework"
+    "typeId": 8
   },
   {
     "id": 15,
-    "order": 15,
+    "order": 21,
     "name": "Spring Boot",
     "icon": "technologies/spring.png",
-    "type": "BE Framework"
+    "typeId": 5
   },
   {
     "id": 16,
-    "order": 16,
+    "order": 22,
     "name": "Spring Data JDBC",
     "icon": "technologies/spring.png",
-    "type": "BE Framework"
+    "typeId": 5
   },
   {
     "id": 17,
-    "order": 17,
+    "order": 23,
     "name": "Spring Data JPA",
     "icon": "technologies/spring.png",
-    "type": "BE Framework"
+    "typeId": 5
   },
   {
     "id": 18,
-    "order": 18,
+    "order": 24,
     "name": "Spring Data Mongo DB",
     "icon": "technologies/spring.png",
-    "type": "BE Framework"
+    "typeId": 5
   },
   {
     "id": 19,
     "order": 19,
     "name": "Excel VBA",
     "icon": "technologies/excel-vba.png",
-    "type": "Program Language"
+    "typeId": 4
   },
   {
     "id": 20,
-    "order": 20,
+    "order": 37,
     "name": "JUnit",
     "icon": "technologies/junit.png",
-    "type": "Testing"
+    "typeId": 9
   },
   {
     "id": 21,
-    "order": 21,
+    "order": 38,
     "name": "Wiremock",
     "icon": "technologies/wiremock.png",
-    "type": "Testing"
+    "typeId": 9
   },
   {
     "id": 22,
-    "order": 22,
+    "order": 39,
     "name": "Mockito",
     "icon": "technologies/mockito.png",
-    "type": "Testing"
+    "typeId": 9
   },
   {
     "id": 23,
-    "order": 23,
+    "order": 44,
     "name": "Maven",
     "icon": "technologies/maven.png",
-    "type": "Build & Dependency"
+    "typeId": 11
   },
   {
     "id": 24,
-    "order": 24,
+    "order": 45,
     "name": "Gradle",
     "icon": "technologies/gradle.png",
-    "type": "Build & Dependency"
+    "typeId": 11
   },
   {
     "id": 25,
     "order": 25,
     "name": "Camel",
     "icon": "technologies/camel.png",
-    "type": "BE Framework"
+    "typeId": 5
   },
   {
     "id": 26,
-    "order": 26,
+    "order": 20,
     "name": "Python 3",
     "icon": "technologies/python.png",
-    "type": "Program Language"
+    "typeId": 4
   },
   {
     "id": 27,
-    "order": 27,
+    "order": 26,
     "name": "Apache Kafka",
     "icon": "technologies/kafka.png",
-    "type": "Messaging & Streaming"
+    "typeId": 6
   },
   {
     "id": 28,
-    "order": 28,
+    "order": 46,
     "name": "Jenkins",
     "icon": "technologies/jenkins.png",
-    "type": "DevOps"
+    "typeId": 12
   },
   {
     "id": 29,
-    "order": 29,
+    "order": 30,
     "name": "Angular 8",
     "icon": "technologies/angular.png",
-    "type": "FE Framework"
+    "typeId": 8
   },
   {
     "id": 30,
-    "order": 30,
+    "order": 31,
     "name": "Angular 11",
     "icon": "technologies/angular.png",
-    "type": "FE Framework"
+    "typeId": 8
   },
   {
     "id": 31,
-    "order": 31,
+    "order": 32,
     "name": "Angular 12",
     "icon": "technologies/angular.png",
-    "type": "FE Framework"
+    "typeId": 8
   },
   {
     "id": 32,
-    "order": 32,
+    "order": 33,
     "name": "Angular 13",
     "icon": "technologies/angular.png",
-    "type": "FE Framework"
+    "typeId": 8
   },
   {
     "id": 33,
-    "order": 33,
+    "order": 34,
     "name": "Angular 16",
     "icon": "technologies/angular.png",
-    "type": "FE Framework"
+    "typeId": 8
   },
   {
     "id": 34,
-    "order": 34,
+    "order": 35,
     "name": "Module Federation",
     "icon": "technologies/module-federation.png",
-    "type": "FE Framework"
+    "typeId": 8
   },
   {
     "id": 35,
-    "order": 35,
+    "order": 47,
     "name": "Kubernetes",
     "icon": "technologies/kubernetes.png",
-    "type": "DevOps"
+    "typeId": 12
   },
   {
     "id": 36,
-    "order": 36,
+    "order": 48,
     "name": "Argo",
     "icon": "technologies/argo.png",
-    "type": "DevOps"
+    "typeId": 12
   },
   {
     "id": 37,
-    "order": 37,
+    "order": 40,
     "name": "Git",
     "icon": "technologies/git.png",
-    "type": "Versioning & Source Control"
+    "typeId": 10
   },
   {
     "id": 38,
-    "order": 38,
+    "order": 41,
     "name": "SVN",
     "icon": "technologies/svn.png",
-    "type": "Versioning & Source Control"
+    "typeId": 10
   },
   {
     "id": 39,
-    "order": 39,
+    "order": 57,
     "name": "Agile",
     "icon": "technologies/agile.png",
-    "type": "Project Management"
+    "typeId": 15
   },
   {
     "id": 40,
-    "order": 40,
+    "order": 55,
     "name": "Jira",
     "icon": "technologies/jira.png",
-    "type": "Project Management"
+    "typeId": 15
   },
   {
     "id": 41,
-    "order": 41,
+    "order": 56,
     "name": "Confluence",
     "icon": "technologies/confluence.png",
-    "type": "Project Management"
+    "typeId": 15
   },
   {
     "id": 42,
-    "order": 42,
+    "order": 50,
     "name": "Kibana",
     "icon": "technologies/kibana.png",
-    "type": "Monitoring & Logging"
+    "typeId": 13
   },
   {
     "id": 43,
-    "order": 43,
+    "order": 49,
     "name": "Terraform",
     "icon": "technologies/terraform.png",
-    "type": "DevOps"
+    "typeId": 12
   },
   {
     "id": 44,
-    "order": 44,
+    "order": 51,
     "name": "DataDog",
     "icon": "technologies/datadog.png",
-    "type": "Monitoring & Logging"
+    "typeId": 13
   },
   {
     "id": 45,
-    "order": 45,
+    "order": 52,
     "name": "Dynatrace",
     "icon": "technologies/dynatrace.png",
-    "type": "Monitoring & Logging"
+    "typeId": 13
   },
   {
     "id": 46,
-    "order": 46,
+    "order": 4,
     "name": "AWS Lambda",
     "icon": "technologies/aws.png",
-    "type": "Cloud"
+    "typeId": 2
   },
   {
     "id": 47,
-    "order": 47,
+    "order": 5,
     "name": "AWS Secret Manager",
     "icon": "technologies/aws.png",
-    "type": "Cloud"
+    "typeId": 2
   },
   {
     "id": 48,
-    "order": 48,
+    "order": 6,
     "name": "AWS Cloudwatch",
     "icon": "technologies/aws.png",
-    "type": "Cloud"
+    "typeId": 2
   },
   {
     "id": 49,
-    "order": 49,
+    "order": 7,
     "name": "AWS API Gateway",
     "icon": "technologies/aws.png",
-    "type": "Cloud"
+    "typeId": 2
   },
   {
     "id": 50,
-    "order": 50,
+    "order": 8,
     "name": "AWS Route 53",
     "icon": "technologies/aws.png",
-    "type": "Cloud"
+    "typeId": 2
   },
   {
     "id": 51,
-    "order": 51,
+    "order": 42,
     "name": "GitHub",
     "icon": "technologies/github.png",
-    "type": "Versioning & Source Control"
+    "typeId": 10
   },
   {
     "id": 52,
-    "order": 52,
+    "order": 1,
     "name": "ChatGPT",
     "icon": "technologies/chatgpt.png",
-    "type": "AI Tools"
+    "typeId": 1
   },
   {
     "id": 53,
-    "order": 53,
+    "order": 2,
     "name": "Copilot",
     "icon": "technologies/copilot.png",
-    "type": "AI Tools"
+    "typeId": 1
   },
   {
     "id": 54,
-    "order": 54,
+    "order": 3,
     "name": "Claude Code",
     "icon": "technologies/claude-code.png",
-    "type": "AI Tools"
+    "typeId": 1
   },
   {
     "id": 55,
-    "order": 55,
+    "order": 43,
     "name": "Fork",
     "icon": "technologies/fork.png",
-    "type": "Versioning & SourceControl"
+    "typeId": 10
   },
   {
     "id": 56,
-    "order": 56,
+    "order": 27,
     "name": "Figma",
     "icon": "technologies/figma.png",
-    "type": "Design & Prototyping"
+    "typeId": 7
   },
   {
     "id": 57,
-    "order": 57,
+    "order": 28,
     "name": "Diagrams-net",
     "icon": "technologies/diagrams-net.png",
-    "type": "Design & Prototyping"
+    "typeId": 7
   }
 ]

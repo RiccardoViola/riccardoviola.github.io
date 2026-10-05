@@ -1,7 +1,8 @@
+import { NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ConstellationBackgroundComponent } from '../../components/constellation-background/constellation-background';
-import { Company, Technology } from '../../model/models';
+import { Company, Technology, TechnologyType } from '../../model/models';
 import {
   approximateDurationMonthsFromDays,
   calendarDurationMonths,
@@ -22,13 +23,14 @@ interface DayRange {
 
 interface SkillCategory {
   name: string;
+  icon: string;
   color: string;
   technologies: SkillMetric[];
 }
 
 @Component({
   selector: 'app-skills',
-  imports: [RouterLink, ConstellationBackgroundComponent],
+  imports: [NgOptimizedImage, RouterLink, ConstellationBackgroundComponent],
   templateUrl: './skills.html',
   styleUrls: ['./skills.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -43,11 +45,13 @@ export class SkillsComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     const companiesUrl = new URL('app/assets/data/companies.json', document.baseURI).href;
     const technologiesUrl = new URL('app/assets/data/technologies.json', document.baseURI).href;
+    const technologyTypesUrl = new URL('app/assets/data/tech-types.json', document.baseURI).href;
 
     try {
-      const [companiesResponse, technologiesResponse] = await Promise.all([
+      const [companiesResponse, technologiesResponse, technologyTypesResponse] = await Promise.all([
         fetch(companiesUrl),
         fetch(technologiesUrl),
+        fetch(technologyTypesUrl),
       ]);
 
       if (!companiesResponse.ok) {
@@ -56,13 +60,18 @@ export class SkillsComponent implements OnInit {
       if (!technologiesResponse.ok) {
         throw new Error(`Unable to load technologies data (${technologiesResponse.status}).`);
       }
+      if (!technologyTypesResponse.ok) {
+        throw new Error(
+          `Unable to load technology types data (${technologyTypesResponse.status}).`,
+        );
+      }
 
-      const [companies, technologies] = (await Promise.all([
+      const [companies, technologies, technologyTypes] = (await Promise.all([
         companiesResponse.json(),
         technologiesResponse.json(),
-      ])) as [Company[], Technology[]];
-
-      this.setSkillMetrics(companies, technologies);
+        technologyTypesResponse.json(),
+      ])) as [Company[], Technology[], TechnologyType[]];
+      this.setSkillMetrics(companies, technologies, technologyTypes);
     } catch (error) {
       console.error('Unable to load skills data:', error);
       this.error.set('Unable to load skills data. Please try again later.');
@@ -82,8 +91,13 @@ export class SkillsComponent implements OnInit {
     return parts.join(' ') || 'Less than a month';
   }
 
-  private setSkillMetrics(companies: Company[], technologies: Technology[]): void {
+  private setSkillMetrics(
+    companies: Company[],
+    technologies: Technology[],
+    technologyTypes: TechnologyType[],
+  ): void {
     const technologyById = new Map(technologies.map((technology) => [technology.id, technology]));
+    const technologyTypeById = new Map(technologyTypes.map((type) => [type.id, type]));
     const rangesByTechnology = new Map<number, DayRange[]>();
     const clientRanges: DayRange[] = [];
     const projectStartDates: string[] = [];
@@ -139,39 +153,49 @@ export class SkillsComponent implements OnInit {
       trackedDaysByTechnology.set(technologyId, this.getCoveredDays(ranges));
     }
 
-    const technologiesByCategory = new Map<string, Array<Technology & { trackedMonths: number }>>();
-    for (const technology of technologies) {
+    const technologiesByCategory = new Map<number, Array<Technology & { trackedMonths: number }>>();
+    for (const technology of [...technologies].sort(
+      (first, second) => first.order - second.order,
+    )) {
+      if (!technologyTypeById.has(technology.typeId)) {
+        throw new Error(`Technology type ID "${technology.typeId}" is missing from the catalogue.`);
+      }
+
       const trackedDays = trackedDaysByTechnology.get(technology.id);
       if (!trackedDays) {
         continue;
       }
       const trackedMonths = approximateDurationMonthsFromDays(trackedDays);
 
-      const categoryName = technology.type.replace('SourceControl', 'Source Control');
-      const categoryTechnologies = technologiesByCategory.get(categoryName) ?? [];
+      const categoryTechnologies = technologiesByCategory.get(technology.typeId) ?? [];
       categoryTechnologies.push({ ...technology, trackedMonths });
-      technologiesByCategory.set(categoryName, categoryTechnologies);
+      technologiesByCategory.set(technology.typeId, categoryTechnologies);
     }
 
     const palette = ['#52b788', '#74c69d', '#4ea8de', '#f4a261', '#c77dff', '#f28482'];
-    let categoryIndex = 0;
-    const categories = [...technologiesByCategory.entries()].map(([name, categoryTechnologies]) => {
-      const color = palette[categoryIndex++ % palette.length];
+    const categories = technologyTypes.flatMap((type, index) => {
+      const categoryTechnologies = technologiesByCategory.get(type.id);
+      if (!categoryTechnologies?.length) {
+        return [];
+      }
 
-      return {
-        name,
-        color,
-        technologies: categoryTechnologies
-          .sort((first, second) => first.order - second.order)
-          .map((technology) => ({
-            id: technology.id,
-            name: technology.name,
-            trackedMonths: technology.trackedMonths,
-            share: Math.round(
-              ((trackedDaysByTechnology.get(technology.id) ?? 0) / workExperienceDays) * 100,
-            ),
-          })),
-      };
+      return [
+        {
+          name: type.name,
+          icon: `app/assets/images/${type.icon}`,
+          color: palette[index % palette.length],
+          technologies: categoryTechnologies
+            .sort((first, second) => first.order - second.order)
+            .map((technology) => ({
+              id: technology.id,
+              name: technology.name,
+              trackedMonths: technology.trackedMonths,
+              share: Math.round(
+                ((trackedDaysByTechnology.get(technology.id) ?? 0) / workExperienceDays) * 100,
+              ),
+            })),
+        },
+      ];
     });
 
     this.categories.set(categories);

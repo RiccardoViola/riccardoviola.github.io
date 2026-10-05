@@ -52,7 +52,16 @@
           >
             <header class="category-header">
               <div>
-                <h2 [id]="'category-' + $index">{{ category.name }}</h2>
+                <div class="category-title">
+                  <img
+                    class="category-type-icon"
+                    [ngSrc]="category.icon"
+                    [alt]="''"
+                    width="44"
+                    height="44"
+                  />
+                  <h2 [id]="'category-' + $index">{{ category.name }}</h2>
+                </div>
                 <p>{{ category.technologies.length }} technologies</p>
               </div>
             </header>

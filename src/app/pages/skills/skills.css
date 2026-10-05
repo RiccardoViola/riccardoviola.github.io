@@ -175,6 +175,19 @@
   font-weight: 650;
 }
 
+.category-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.category-type-icon {
+  display: block;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+}
+
 .category-header p {
   margin: 6px 0 0;
   color: #95a69b;

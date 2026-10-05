@@ -1,0 +1,77 @@
+[
+  {
+    "id": 1,
+    "name": "AI Tools",
+    "icon": "tech-types/ai-tools.svg"
+  },
+  {
+    "id": 2,
+    "name": "Cloud",
+    "icon": "tech-types/cloud.svg"
+  },
+  {
+    "id": 3,
+    "name": "Database",
+    "icon": "tech-types/database.svg"
+  },
+  {
+    "id": 4,
+    "name": "Program Language",
+    "icon": "tech-types/program-language.svg"
+  },
+  {
+    "id": 5,
+    "name": "BE Framework",
+    "icon": "tech-types/be-framework.svg"
+  },
+  {
+    "id": 6,
+    "name": "Messaging & Streaming",
+    "icon": "tech-types/messaging-streaming.svg"
+  },
+  {
+    "id": 7,
+    "name": "Design & Prototyping",
+    "icon": "tech-types/design-prototyping.svg"
+  },
+  {
+    "id": 8,
+    "name": "FE Framework",
+    "icon": "tech-types/fe-framework.svg"
+  },
+  {
+    "id": 9,
+    "name": "Testing",
+    "icon": "tech-types/testing.svg"
+  },
+  {
+    "id": 10,
+    "name": "Versioning & Source Control",
+    "icon": "tech-types/versioning-source-control.svg"
+  },
+  {
+    "id": 11,
+    "name": "Build & Dependency",
+    "icon": "tech-types/build-dependency.svg"
+  },
+  {
+    "id": 12,
+    "name": "DevOps",
+    "icon": "tech-types/devops.svg"
+  },
+  {
+    "id": 13,
+    "name": "Monitoring & Logging",
+    "icon": "tech-types/monitoring-logging.svg"
+  },
+  {
+    "id": 14,
+    "name": "Remote Access",
+    "icon": "tech-types/remote-access.svg"
+  },
+  {
+    "id": 15,
+    "name": "Project Management",
+    "icon": "tech-types/project-management.svg"
+  }
+]

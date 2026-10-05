@@ -23,7 +23,13 @@ export interface Technology {
   order: number;
   name: string;
   icon: string;
-  type: string;
+  typeId: number;
+}
+
+export interface TechnologyType {
+  id: number;
+  name: string;
+  icon: string;
 }
 
 export interface Sector {

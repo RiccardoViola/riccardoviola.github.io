@@ -1,4 +1,11 @@
-import { ChangeDetectionStrategy, Component, computed, inject, OnInit, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  inject,
+  OnInit,
+  signal,
+} from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Client, Company, Sector, Technology } from '../../model/models';
@@ -18,6 +25,9 @@ export class CompanyDetailComponent implements OnInit {
 
   readonly company = signal<Company | null>(null);
   readonly technologies = signal<Technology[]>([]);
+  private readonly technologyById = computed(
+    () => new Map(this.technologies().map((technology) => [technology.id, technology])),
+  );
   readonly sectors = signal<Sector[]>([]);
   readonly clients = computed(() => this.company()?.clients.slice().reverse() ?? []);
   readonly loading = signal(true);
@@ -78,7 +88,7 @@ export class CompanyDetailComponent implements OnInit {
   }
 
   technologiesFor(client: Client): Technology[] {
-    const technologyById = new Map(this.technologies().map((technology) => [technology.id, technology]));
+    const technologyById = this.technologyById();
     return client.technologies
       .map((technologyId) => technologyById.get(technologyId))
       .filter((technology): technology is Technology => technology !== undefined)
