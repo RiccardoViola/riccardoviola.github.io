@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Company } from '../../model/models';
 import { ConstellationBackgroundComponent } from '../../components/constellation-background/constellation-background';
 import { slugify } from '../../utils/slugify';
+import { formatDate as formatIsoDate } from '../../utils/format-date';
 
 @Component({
   selector: 'app-home',
@@ -43,6 +44,10 @@ export class HomeComponent implements OnInit {
 
   isString(value: unknown): value is string {
     return typeof value === 'string';
+  }
+
+  formatDate(value: string): string {
+    return formatIsoDate(value);
   }
 
   goToSkills(): void {

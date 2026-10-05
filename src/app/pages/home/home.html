@@ -71,9 +71,9 @@
       <div class="timeline-row" [style.animation-delay]="i * 100 + 'ms'">
         <!-- Left: dates + dot -->
         <div class="timeline-meta" [class.timeline-meta--center]="isString(project.startDate) || isString(project.endDate)">
-          <span class="timeline-date timeline-date--end" [class.timeline-date--center]="isString(project.endDate)">{{ project.endDate }}</span>
+          <span class="timeline-date timeline-date--end" [class.timeline-date--center]="isString(project.endDate)">{{ formatDate(project.endDate) }}</span>
           <div class="timeline-dot"></div>
-          <span class="timeline-date" [class.timeline-date--center]="isString(project.startDate)">{{ project.startDate }}</span>
+          <span class="timeline-date" [class.timeline-date--center]="isString(project.startDate)">{{ formatDate(project.startDate) }}</span>
           <!-- vertical connector between rows -->
           @if (i < companies.length - 1) {
             <div class="timeline-connector"></div>

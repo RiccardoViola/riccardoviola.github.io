@@ -38,7 +38,7 @@
     "id": 6,
     "order": 6,
     "name": "WinSCP",
-    "icon": "",
+    "icon": "technologies/winscp.png",
     "type": "Remote Access"
   },
   {
@@ -129,7 +129,7 @@
     "id": 19,
     "order": 19,
     "name": "Excel VBA",
-    "icon": "",
+    "icon": "technologies/excel-vba.png",
     "type": "Program Language"
   },
   {
@@ -143,14 +143,14 @@
     "id": 21,
     "order": 21,
     "name": "Wiremock",
-    "icon": "",
+    "icon": "technologies/wiremock.png",
     "type": "Testing"
   },
   {
     "id": 22,
     "order": 22,
     "name": "Mockito",
-    "icon": "",
+    "icon": "technologies/mockito.png",
     "type": "Testing"
   },
   {
@@ -171,7 +171,7 @@
     "id": 25,
     "order": 25,
     "name": "Camel",
-    "icon": "",
+    "icon": "technologies/camel.png",
     "type": "BE Framework"
   },
   {
@@ -269,7 +269,7 @@
     "id": 39,
     "order": 39,
     "name": "Agile",
-    "icon": "",
+    "icon": "technologies/agile.png",
     "type": "Project Management"
   },
   {
@@ -360,7 +360,7 @@
     "id": 52,
     "order": 52,
     "name": "ChatGPT",
-    "icon": "",
+    "icon": "technologies/chatgpt.png",
     "type": "AI Tools"
   },
   {
@@ -381,7 +381,7 @@
     "id": 55,
     "order": 55,
     "name": "Fork",
-    "icon": "",
+    "icon": "technologies/fork.png",
     "type": "Versioning & SourceControl"
   }
 ]

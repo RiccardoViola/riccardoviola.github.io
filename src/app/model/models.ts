@@ -25,3 +25,9 @@ export interface Technology {
   icon: string;
   type: string;
 }
+
+export interface Sector {
+  id: number;
+  name: string;
+  icon: string;
+}

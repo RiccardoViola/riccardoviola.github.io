@@ -2,26 +2,51 @@
   {
     "id": 1,
     "name": "Telecommunications",
-    "icon": ""
+    "icon": "sectors/telco.png"
   },
   {
     "id": 2,
     "name": "Energy",
-    "icon": ""
+    "icon": "sectors/energy.png"
   },
   {
     "id": 3,
     "name": "Insurance",
-    "icon": ""
+    "icon": "sectors/insurance.png"
   },
   {
     "id": 4,
     "name": "Aerospace",
-    "icon": ""
+    "icon": "sectors/aerospace.png"
   },
   {
     "id": 5,
     "name": "Banking",
-    "icon": ""
+    "icon": "sectors/banking.png"
+  },
+  {
+    "id": 6,
+    "name": "Automotive",
+    "icon": "sectors/automotive.png"
+  },
+  {
+    "id": 7,
+    "name": "Life Sciences",
+    "icon": "sectors/life-sciences.png"
+  },
+  {
+    "id": 8,
+    "name": "Public",
+    "icon": "sectors/public.png"
+  },
+  {
+    "id": 9,
+    "name": "Retail",
+    "icon": "sectors/retail.png"
+  },
+  {
+    "id": 10,
+    "name": "Technologies",
+    "icon": "sectors/tech.png"
   }
 ]

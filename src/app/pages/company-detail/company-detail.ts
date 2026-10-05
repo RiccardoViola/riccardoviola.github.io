@@ -1,9 +1,10 @@
 import { ChangeDetectionStrategy, Component, computed, inject, OnInit, signal } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { Client, Company, Technology } from '../../model/models';
+import { Client, Company, Sector, Technology } from '../../model/models';
 import { ConstellationBackgroundComponent } from '../../components/constellation-background/constellation-background';
 import { slugify } from '../../utils/slugify';
+import { formatCompanyDate, formatWorkDuration } from '../../utils/format-date';
 
 @Component({
   selector: 'app-company-detail',
@@ -17,6 +18,7 @@ export class CompanyDetailComponent implements OnInit {
 
   readonly company = signal<Company | null>(null);
   readonly technologies = signal<Technology[]>([]);
+  readonly sectors = signal<Sector[]>([]);
   readonly clients = computed(() => this.company()?.clients.slice().reverse() ?? []);
   readonly loading = signal(true);
   readonly error = signal<string | null>(null);
@@ -31,11 +33,13 @@ export class CompanyDetailComponent implements OnInit {
 
     const companiesUrl = new URL('app/assets/data/companies.json', document.baseURI).href;
     const technologiesUrl = new URL('app/assets/data/technologies.json', document.baseURI).href;
+    const sectorsUrl = new URL('app/assets/data/sectors.json', document.baseURI).href;
 
     try {
-      const [companiesResponse, technologiesResponse] = await Promise.all([
+      const [companiesResponse, technologiesResponse, sectorsResponse] = await Promise.all([
         fetch(companiesUrl),
         fetch(technologiesUrl),
+        fetch(sectorsUrl),
       ]);
 
       if (!companiesResponse.ok) {
@@ -44,11 +48,15 @@ export class CompanyDetailComponent implements OnInit {
       if (!technologiesResponse.ok) {
         throw new Error(`Unable to load technologies data (${technologiesResponse.status}).`);
       }
+      if (!sectorsResponse.ok) {
+        throw new Error(`Unable to load sectors data (${sectorsResponse.status}).`);
+      }
 
-      const [companies, technologies] = (await Promise.all([
+      const [companies, technologies, sectors] = (await Promise.all([
         companiesResponse.json(),
         technologiesResponse.json(),
-      ])) as [Company[], Technology[]];
+        sectorsResponse.json(),
+      ])) as [Company[], Technology[], Sector[]];
       const selectedCompany = companies.find(
         (company) => slugify(company.name) === slugify(companyName),
       );
@@ -60,6 +68,7 @@ export class CompanyDetailComponent implements OnInit {
 
       this.company.set(selectedCompany);
       this.technologies.set(technologies);
+      this.sectors.set(sectors);
     } catch (error) {
       console.error('Unable to load company details:', error);
       this.error.set('Unable to load company details. Please try again later.');
@@ -74,5 +83,17 @@ export class CompanyDetailComponent implements OnInit {
       .map((technologyId) => technologyById.get(technologyId))
       .filter((technology): technology is Technology => technology !== undefined)
       .sort((first, second) => first.order - second.order);
+  }
+
+  sectorIcon(sectorName: string): string | undefined {
+    return this.sectors().find((sector) => sector.name === sectorName)?.icon;
+  }
+
+  formatDate(value: string): string {
+    return formatCompanyDate(value);
+  }
+
+  workDuration(startDate: string, endDate: string): string {
+    return formatWorkDuration(startDate, endDate);
   }
 }
