@@ -34,7 +34,9 @@
         Riccardo <span class="name-accent">Viola</span>
       </h1>
       <p class="hero-desc text-base md:text-lg leading-relaxed max-w-lg">
-        I build resilient backend systems with Spring Boot and craft fluid, reactive frontends with Angular. Passionate about clean architecture, DDD, and developer experience.
+        I'm a full-stack developer focused on back-end engineering, building Java RESTful
+        microservices and front-end applications. I'm interested in AI and cloud technologies.
+        Outside work, I enjoy volleyball, five-a-side football, and cinema.
       </p>
       <div class="mt-8 flex gap-4">
         <a
@@ -67,48 +69,59 @@
 
     <!-- Timeline + Cards layout -->
     <div id="companies-section" class="timeline-layout px-6 md:px-16 lg:px-28">
-    @for (project of companies; track project.name; let i = $index) {
-      <div class="timeline-row" [style.animation-delay]="i * 100 + 'ms'">
-        <!-- Left: dates + dot -->
-        <div class="timeline-meta" [class.timeline-meta--center]="isString(project.startDate) || isString(project.endDate)">
-          <span class="timeline-date timeline-date--end" [class.timeline-date--center]="isString(project.endDate)">{{ formatDate(project.endDate) }}</span>
-          <div class="timeline-dot"></div>
-          <span class="timeline-date" [class.timeline-date--center]="isString(project.startDate)">{{ formatDate(project.startDate) }}</span>
-          <!-- vertical connector between rows -->
-          @if (i < companies.length - 1) {
-            <div class="timeline-connector"></div>
-          }
-        </div>
-
-        <!-- Right: full-width card -->
-        <div
-          class="project-card"
-          (click)="goToCompany(project.name)"
-          (keydown.enter)="goToCompany(project.name)"
-          tabindex="0"
-          role="button"
-          [attr.aria-label]="'Open project ' + project.name"
-        >
-          <div class="card-inner">
-            <div class="card-header">
-              <div class="card-title-group">
-                <img
-                  class="card-icon"
-                  [ngSrc]="'app/assets/images/' + project.icon"
-                  [alt]="project.name + ' logo'"
-                  width="40"
-                  height="40"
-                />
-                <h3 class="card-title">{{ project.name }}</h3>
-              </div>
-              <div class="card-arrow">→</div>
-            </div>
-            <p class="card-desc">{{ project.description }}</p>
+      @for (project of companies; track project.name; let i = $index) {
+        <div class="timeline-row" [style.animation-delay]="i * 100 + 'ms'">
+          <!-- Left: dates + dot -->
+          <div
+            class="timeline-meta"
+            [class.timeline-meta--center]="isString(project.startDate) || isString(project.endDate)"
+          >
+            <span
+              class="timeline-date timeline-date--end"
+              [class.timeline-date--center]="isString(project.endDate)"
+              >{{ formatDate(project.endDate) }}</span
+            >
+            <div class="timeline-dot"></div>
+            <span
+              class="timeline-date"
+              [class.timeline-date--center]="isString(project.startDate)"
+              >{{ formatDate(project.startDate) }}</span
+            >
+            <!-- vertical connector between rows -->
+            @if (i < companies.length - 1) {
+              <div class="timeline-connector"></div>
+            }
           </div>
-          <div class="card-shine"></div>
+
+          <!-- Right: full-width card -->
+          <div
+            class="project-card"
+            (click)="goToCompany(project.name)"
+            (keydown.enter)="goToCompany(project.name)"
+            tabindex="0"
+            role="button"
+            [attr.aria-label]="'Open project ' + project.name"
+          >
+            <div class="card-inner">
+              <div class="card-header">
+                <div class="card-title-group">
+                  <img
+                    class="card-icon"
+                    [ngSrc]="'app/assets/images/' + project.icon"
+                    [alt]="project.name + ' logo'"
+                    width="40"
+                    height="40"
+                  />
+                  <h3 class="card-title">{{ project.name }}</h3>
+                </div>
+                <div class="card-arrow">→</div>
+              </div>
+              <p class="card-desc">{{ project.description }}</p>
+            </div>
+            <div class="card-shine"></div>
+          </div>
         </div>
-      </div>
-    }
-  </div>
-</section>
+      }
+    </div>
+  </section>
 }

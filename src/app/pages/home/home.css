@@ -396,8 +396,10 @@ nav {
 }
 
 .card-arrow {
-  font-size: 1.2rem;
-  color: #52b788;
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #8fffc4;
+  text-shadow: 0 0 12px rgba(143, 255, 196, 0.55);
   opacity: 0;
   transform: translateX(-8px);
   transition:
